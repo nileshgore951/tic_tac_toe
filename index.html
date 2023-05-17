@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-sm-6 offset-sm-3">
+                <div id="result"></div>
+                <table id="stat" class="d-none table table-dark table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="table-danger" id="player1Name"></th>
+                            <th class="table-primary" id="player2Name"></th>
+                            <th class="table-secondary">Draw</th>
+                            <th class="table-warning">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="table-danger" id="redWinCount">0</td>
+                            <td class=" table-primary" id="blueWinCount">0</td>
+                            <td class="table-secondary" id="drawCount">0</td>
+                            <td class="table-warning" id="totalMatchCount">0</td>
+                        </tr>
+                        <tr class="table-light">
+                            <td colspan="4">
+                                <div class="progress position-relative">
+                                    <div id="redProgress"
+                                        class="progress-bar progress-bar-striped progress-bar-animated bg-danger">
+                                    </div>
+                                    <div id="blueProgress"
+                                        class="progress-bar progress-bar-striped progress-bar-animated bg-primary">
+                                    </div>
+                                    <div id="drawProgress"
+                                        class="progress-bar progress-bar-striped progress-bar-animated bg-dark">
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="card bg-info " id="playerCard">
+                    <div class="card-header text-center">Start Game</div>
+                    <div class="card-body">
+                        <input id="player1" type="text" class="form-control inp" placeholder="Player 1 Name">
+                        <select id="colorChoice" class="form-select inp" onchange="choice()">
+                            <option selected>Open this select menu</option>
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                        </select><br>
+                        <input id="player2" type="text" class="form-control inp" placeholder="player 2 Name">
+                        <select id="secondColorChoice" class="form-select inp">
+                        </select><br>
+                        <button onclick="startGame()" type="button" class="btn btn-primary">Start Game</button>
+                    </div>
+                </div>
+                <div class="card d-none bg-info align-items-center" id="gameCard">
+                    <!-- class = d-none ===== display none  -->
+
+                    <div class="card-header">Tic Tac Toe</div>
+                    <div class="card-body main mx-5 ">
+                        <!-- Print 9 boxes -->
+                        <!-- #box$.box*9 -->
+                        <div onclick="game('box1')" id="box1" class="box"></div>
+                        <div onclick="game('box2')" id="box2" class="box"></div>
+                        <div onclick="game('box3')" id="box3" class="box"></div>
+                        <div onclick="game('box4')" id="box4" class="box"></div>
+                        <div onclick="game('box5')" id="box5" class="box"></div>
+                        <div onclick="game('box6')" id="box6" class="box"></div>
+                        <div onclick="game('box7')" id="box7" class="box"></div>
+                        <div onclick="game('box8')" id="box8" class="box"></div>
+                        <div onclick="game('box9')" id="box9" class="box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/myScript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
